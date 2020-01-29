@@ -135,18 +135,14 @@ const getDetailValueArray = (value, minDate, maxDate, maxDetail) => {
 const getActiveStartDate = (props) => {
   const {
     activeStartDate,
-    maxDate,
     maxDetail,
-    minDate,
     minDetail,
-    value,
     view,
   } = props;
 
   const rangeType = getView(view, minDetail, maxDetail);
   const valueFrom = (
-    getDetailValueFrom(value, minDate, maxDate, maxDetail)
-    || activeStartDate
+    activeStartDate
     || new Date()
   );
   return getBegin(rangeType, valueFrom);

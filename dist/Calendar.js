@@ -181,14 +181,11 @@ var getDetailValueArray = function getDetailValueArray(value, minDate, maxDate, 
 
 var getActiveStartDate = function getActiveStartDate(props) {
   var activeStartDate = props.activeStartDate,
-      maxDate = props.maxDate,
       maxDetail = props.maxDetail,
-      minDate = props.minDate,
       minDetail = props.minDetail,
-      value = props.value,
       view = props.view;
   var rangeType = getView(view, minDetail, maxDetail);
-  var valueFrom = getDetailValueFrom(value, minDate, maxDate, maxDetail) || activeStartDate || new Date();
+  var valueFrom = activeStartDate || new Date();
   return (0, _dates.getBegin)(rangeType, valueFrom);
 };
 
