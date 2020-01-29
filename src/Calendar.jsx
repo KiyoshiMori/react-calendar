@@ -175,7 +175,7 @@ export default class Calendar extends Component {
      * valid based on minDetail and maxDetail, get a new one.
      */
     const nextView = getView(nextProps.view, minDetail, maxDetail);
-    if (nextView !== prevState.viewProps && !isViewAllowed(prevState.view, minDetail, maxDetail)) {
+    if (nextView !== prevState.viewProps && isViewAllowed(nextView, minDetail, maxDetail)) {
       nextState.view = nextView;
       nextState.viewProps = nextView;
     }
